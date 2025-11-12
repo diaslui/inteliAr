@@ -1,118 +1,14 @@
+{% extends 'base.html' %}
+
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klinus:  Automação e Economia Energética para Instituições Públicas</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#f0f9ff',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            900: '#1e3a8a'
-                        },
-                        bgdark: {
-                            50: '#f8fafc',
-                            800: '#1f2937',
-                            900: '#0A0D12'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-
-
-   
-        .bg-waves {
-            background-image:
-                url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='40' viewBox='0 0 120 40'><path fill='%23ffffff' fill-opacity='0.06' d='M0 20 Q30 0 60 20 T120 20 V40 H0z'/></svg>"),
-                linear-gradient(180deg, rgba(59,131,246,0.06), transparent 60%);
-            background-size: 120px 40px, auto;
-        }
-        .dark .bg-waves {
-            background-image:
-                url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='40' viewBox='0 0 120 40'><path fill='%23000000' fill-opacity='0.06' d='M0 20 Q30 0 60 20 T120 20 V40 H0z'/></svg>"),
-                linear-gradient(180deg, rgba(29,78,216,0.04), rgba(10,13,18,0.06));
-        }
-
-       
-
-        .gradient-text {
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-
-        .card-hover:hover {
-            transform: translateY(-5px);
-        }
-    </style>
-</head>
-
-<body class=" dark:bg-bgdark-900 text-gray-900 dark:text-white transition-colors duration-300">
-    <div class="bg-waves min-h-screen">
-        <header
-            class="fixed top-0 w-full bg-white/80 dark:bg-bgdark-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 z-50">
-            <nav class="container mx-auto px-6 py-4">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center space-x-2">
-            
-                        </div>
-
-                    <div class="hidden md:flex items-center space-x-8">
-
-                        <a href="https://diaslui.github.io/klinus/" class="hover:text-primary-600 transition-colors">Documentação</a>
-                        <a href="#about" class="hover:text-primary-600 transition-colors">Sobre</a>
-                        <a href="" class="hover:text-primary-600 transition-colors">Klinus na sua Instituição</a>
-                        <a href="" class="hover:text-primary-600 transition-colors">Diário de Bordo</a>
-                        <a href="" class="hover:text-primary-600 transition-colors">Quem Somos?</a>
-                    </div>
-
-                    <div class="flex items-center space-x-4">
-                        <button id="theme-toggle"
-                            class="p-2 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                            <svg id="sun-icon" class="w-5 h-5 hidden dark:block" fill="currentColor"
-                                viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <svg id="moon-icon" class="w-5 h-5 block dark:hidden" fill="currentColor"
-                                viewBox="0 0 20 20">
-                                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                            </svg>
-                        </button>
-                        <a href="dashboard.html"
-                            class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-xl font-medium transition-colors">
-                            Dashboard
-                        </a>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
+{% block title %}Home{% endblock %}
+{% block content %}
         <section class="pt-32 pb-20">
             <div class="container mx-auto px-6">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <h1 class="text-5xl lg:text-6xl font-bold mb-6">
-                            <span class="gradient-text">Klinus:</span><br>
+                            <span class="gradient-text">InteliAr:</span><br>
                             Automação e Economia Energética para Instituições Públicas
                         </h1>
                         <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
@@ -125,7 +21,7 @@
                             </a>
                             <a href="#funcionalidades"
                                 class="border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white px-8 py-4 rounded-xl font-medium transition-colors text-center">
-                                Traga o Klinus para sua Instituição </a>
+                                Traga o InteliAr para sua Instituição </a>
                         </div>
                     </div>
                     <div class="relative">
@@ -318,101 +214,4 @@ Utilizando sensores de radar LD2410B, ESP32 e comunicação via MQTT, o sistema 
                 </div>
             </div>
         </section>
-
-        <footer class="bg-gray-900 text-white py-12">
-            <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-4 gap-8">
-                    <div>
-                        <div class="flex items-center space-x-2 mb-4">
-                            <span class="text-xl font-bold">Klinus</span>
-                        </div>
-                        <p class="text-gray-400">
-                           Automação e Economia Energética para Instituições Públicas
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="font-bold mb-4">Klinus</h3>
-                        <ul class="space-y-2 text-gray-400">
-                            <li><a href="" target="_blank" rel="noopener"
-                                    class="hover:text-primary-500 hover:underline ">Login</a></li>
-                            <li><a href="" target="_blank" rel="noopener"
-                                    class="hover:text-primary-500 hover:underline ">Dashboard</a></li>
-
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="font-bold mb-4">O Projeto</h3>
-                        <ul class="space-y-2 text-gray-400">
-                            <li><a href="https://github.com/diaslui/klinus/" target="_blank" rel="noopener"
-                                    class="hover:text-primary-500 hover:underline ">Repositório</a></li>
-                            <li><a href="https://www.ifpi.edu.br/" target="_blank" rel="noopener"
-                                    class="hover:text-primary-500 hover:underline ">Instituto Federal Do Piaui</a></li>
-
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="font-bold mb-4">Suporte</h3>
-                        <ul class="space-y-2 text-gray-400">
-                            <li><a href="" target="_blank" rel="noopener"
-                                    class="hover:text-primary-500 hover:underline ">Fale Conosco</a></li>
-
-                            <li><a href="" target="_blank" rel="noopener"
-                                    class="hover:text-primary-500 hover:underline ">Encontrou um Bug?</a></li>
-                            <li><a href="" target="_blank" rel="noopener"
-                                    class="hover:text-primary-500 hover:underline ">Como utilizar o Klinus</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                    <p>&copy; 2025 Klinus. IFPI - Campus São Raimundo Nonato.
-                        <br> Nós apoiamos o <a class="text-bold text-primary-500 underline"
-                            href="https://github.com/diaslui/klinus/" target="_blank" rel="noopener">#OpenSource</a>
-                    </p>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <script>
-        const themeToggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        html.classList.toggle('dark', currentTheme === 'dark');
-
-        themeToggle.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            const newTheme = html.classList.contains('dark') ? 'dark' : 'light';
-            localStorage.setItem('theme', newTheme);
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.classList.add('backdrop-blur-lg');
-            } else {
-                header.classList.remove('backdrop-blur-lg');
-            }
-        });
-    </script>
-</body>
-
-</html>
+{% endblock %}
